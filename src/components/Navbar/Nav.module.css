@@ -10,11 +10,12 @@
     margin-left: 15px;
     display: inline-block;
     padding: 10px;
+    text-decoration: none;
 }
 
 .nav a:hover {
     color: darkslateblue;
 }
-.item.active{
+.item a.activeLink{
     color: blue;
 }
