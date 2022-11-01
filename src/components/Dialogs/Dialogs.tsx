@@ -2,33 +2,49 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import {NavLink} from 'react-router-dom';
 
-export const Dialogs = () => {
+type DialogsType = {
+    id:string
+    name:string
+    message:string
+}
+type DialogItemProps = {
+    id:string
+    name:string
+}
+type MessageTypeProps = {
+    message:string
+}
+
+const DialogItem = (props:DialogItemProps) => {
+    let path = '/dialogs/' + props.id
+    return (
+        <div className={s.dialog + ' ' + s.active}>
+            <NavLink to={path}>{props.name}</NavLink>
+        </div>
+    )
+}
+
+const Message = (props:MessageTypeProps) => {
+    return (
+        <div className={s.dialog}>{props.message}</div>
+    )
+}
+
+export const Dialogs = (props:DialogsType) => {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <div className={s.dialog + ' ' + s.active}>
-                    <NavLink to='/dialogs/1'>Ivan</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to='/dialogs/2'>Sasha</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to='/dialogs/3'>Alex</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to='/dialogs/4'>Sveta</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to='/dialogs/5'>Dimych</NavLink>
-                </div>
-                <div className={s.dialog}>
-                    <NavLink to='/dialogs/6'>Jon</NavLink>
-                </div>
+                <DialogItem name='Ivan' id='1'/>
+                <DialogItem name='Sasha' id='2'/>
+                <DialogItem name='Alex' id='3'/>
+                <DialogItem name='Sveta' id='4'/>
+                <DialogItem name='Dimych' id='5'/>
+                <DialogItem name='Jon' id='6'/>
             </div>
             <div className={s.messages}>
-                <div className={s.dialog}>Hi</div>
-                <div className={s.dialog}>yo-yo-yo!</div>
-                <div className={s.dialog}>how are you?</div>
+                <Message message='Hi'/>
+                <Message message='yo-yo-yo!'/>
+                <Message message='how are you?'/>
             </div>
         </div>
     );
