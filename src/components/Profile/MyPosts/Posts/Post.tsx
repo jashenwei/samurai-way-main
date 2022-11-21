@@ -1,13 +1,12 @@
 import React from "react";
 import Prof from './Post.module.css';
 
-
-type MessageProps = {
-    message:string,
-    likesCount:string
+type PostTypeProps = {
+    message:string
+    likesCount: number
 }
 
-export const Post = (props:MessageProps) => {
+export const Post = (props:PostTypeProps) => {
     return (
         <div className={Prof.item}>
             <img

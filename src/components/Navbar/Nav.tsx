@@ -6,19 +6,19 @@ export const Nav = () => {
     return (
         <nav className={Navi.nav}>
             <div className={Navi.item}>
-                <NavLink to='/profile' activeClassName={Navi.activeLink}> Profile</NavLink>
+                <NavLink to='/profile' className={Navi.aNav} activeClassName={Navi.activeLink}> Profile</NavLink>
             </div>
             <div className={`${Navi.item} ${Navi.active}`}>
-                <NavLink to='/dialogs' activeClassName={Navi.activeLink}> Message</NavLink>
+                <NavLink to='/dialogs' className={Navi.aNav} activeClassName={Navi.activeLink}> Message</NavLink>
             </div>
             <div className={Navi.item}>
-                <NavLink to='/news' activeClassName={Navi.activeLink}> News</NavLink>
+                <NavLink to='/news' className={Navi.aNav} activeClassName={Navi.activeLink}> News</NavLink>
             </div>
             <div className={Navi.item}>
-                <NavLink to='/music' activeClassName={Navi.activeLink}> Music</NavLink>
+                <NavLink to='/music' className={Navi.aNav} activeClassName={Navi.activeLink}> Music</NavLink>
             </div>
             <div className={Navi.item}>
-                <NavLink to='/settings' activeClassName={Navi.activeLink}> Settings</NavLink>
+                <NavLink to='/settings' className={Navi.aNav}  activeClassName={Navi.activeLink}> Settings</NavLink>
             </div>
         </nav>
     );

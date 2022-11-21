@@ -1,12 +1,17 @@
 import React from "react";
 import {MyPosts} from "./MyPosts/MyPosts";
 import {ProfileInfo} from './ProfileInfo/ProfileInfo';
+import {PostType} from '../../redux/state';
 
-export const Profile = () => {
+type PropsType = {
+    posts: PostType[]
+}
+
+export const Profile = (props:PropsType) => {
     return (
         <div>
             <ProfileInfo />
-            <MyPosts />
+            <MyPosts posts={props.posts}/>
         </div>
     );
 };

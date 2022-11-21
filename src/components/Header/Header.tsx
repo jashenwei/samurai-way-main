@@ -6,6 +6,7 @@ export const Header = () => {
     return (
         <header className={Head.header}>
             <img src={logo} alt = ''/>
+            <p className={Head.name}>CLOUD<br/>NETWORK</p>
         </header>
     );
 };
